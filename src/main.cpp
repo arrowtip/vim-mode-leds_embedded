@@ -1,5 +1,5 @@
 #include <Adafruit_NeoPixel.h>
-#include <SoftwareSerial.h>
+#include <DigiCDC.h>
 
 char chr;
 uint32_t color = 0;
@@ -17,34 +17,33 @@ uint32_t color = 0;
 #define TX 3
 
 Adafruit_NeoPixel strip(1, 1, NEO_GRB + NEO_KHZ800);
-SoftwareSerial mySerial(RX, TX);
 
-void setup() {
+extern "C" void setup() {
   strip.begin();
   strip.show();
   strip.setBrightness(50);
 
-  delay(2000);
+  SerialUSB.delay(2000);
   strip.setPixelColor(0, 0xff);
   strip.show();
 
-  mySerial.begin(4800);
-  mySerial.println(F("Serial initialization complete"));
+  SerialUSB.begin();
+  SerialUSB.write(F("Serial initialization complete"));
 
   strip.setPixelColor(0, 0xff00);
   strip.show();
-  delay(500);
+  SerialUSB.delay(500);
   strip.setPixelColor(0, 0);
   strip.show();
   
 }
 
-void loop() {
+extern "C" void loop() {
   
 
-    if (mySerial.available())
+    if (SerialUSB.available())
     {
-        chr = mySerial.read();
+        chr = SerialUSB.read();
 
         switch (chr) {
           case '0':
@@ -77,5 +76,6 @@ void loop() {
         strip.setPixelColor(0, color);
         strip.show();
     }
+    SerialUSB.delay(10);
 
 }
