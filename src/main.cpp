@@ -27,7 +27,6 @@ extern "C" void loop() {
         int val = SerialUSB.read();
 
         if (val != -1) {
-          SerialUSB.write(color);
           color = ((val & 0b11000000) << 24) | ((val & 0b110000) << 18)
             | ((val & 0b1100) << 12) | ((val & 0b11) << 6);
         }
