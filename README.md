@@ -13,7 +13,10 @@ Everything you need to turn your next neovim coding session into a strobo party.
 1. Flash the [ArduinoISP program](https://www.arduino.cc/en/Tutorial/BuiltInExamples/ArduinoISP) 
 to an Arduino board of your choice and
 connect the ATtiny85 to it
-2. Run the provided shell script `/flash_micronucleus.sh` (might require root privileges)
+2. Run the provided shell script `/flash_micronucleus.sh` (might require root privileges):
+    ```bash
+    ./flash_micronucleus.sh -P <port of arduino>
+    ```
 
 ### Option 2: Install Micronucleus from Repo
 1. Flash the [ArduinoISP program](https://www.arduino.cc/en/Tutorial/BuiltInExamples/ArduinoISP) 
