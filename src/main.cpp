@@ -15,9 +15,21 @@ extern "C" void setup() {
 
   SerialUSB.begin();
 
+  strip.setPixelColor(0, 0xff0000);
+  strip.show();
+  SerialUSB.delay(500);
+  strip.clear();
+  strip.show();
+  SerialUSB.delay(500);
+  strip.setPixelColor(0, 0xff0000);
+  strip.show();
+  SerialUSB.delay(500);
+  strip.clear();
+  strip.show();
+  SerialUSB.delay(500);
   strip.setPixelColor(0, 0xff00);
   strip.show();
-  SerialUSB.delay(1000);
+  SerialUSB.delay(800);
   strip.clear();
   strip.show();
 }
