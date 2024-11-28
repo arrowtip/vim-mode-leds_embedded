@@ -29,10 +29,16 @@ uint16_t get_random() {
 void good(const long delay) {
   static bool done = false;
   if (!done) {
-    DigiKeyboard.delay(500);
+    DigiKeyboard.delay(5000);
+    DigiKeyboard.sendKeyStroke(0, MOD_GUI_LEFT);
+    DigiKeyboard.delay(200);
+    DigiKeyboard.println("editor");
+    DigiKeyboard.delay(2000);
+    DigiKeyboard.sendKeyStroke(KEY_ENTER);
+    DigiKeyboard.delay(2000);
     unsigned int idx = get_random() % (sizeof(quotes) / sizeof(quotes[0]));
     DigiKeyboard.println(quotes[idx]);
-    //done = true;
+    done = true;
   }
   DigiKeyboard.delay(delay);
   return;
