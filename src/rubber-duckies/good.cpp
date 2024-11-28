@@ -16,6 +16,19 @@ const char* quotes[] = {
   "it is always night before dawn",
   "people love you",
   "tea mate for life!",
+  "stay hydrated!",
+  "is it not a great day?",
+  "don't worry, be happy",
+  "do not let little stupid things break your happiness",
+  "is it not the perfect day to have a great day?",
+  "never give up!",
+  "you deserve to be happy",
+  "no rain, no flowers",
+  "life is too short to spend it at war with yourself",
+  "life is short. smile while you still have teeth",
+  "we grow through what we go through",
+  "you will be better soon",
+  "nobody is perfect"
 };
 
 
@@ -26,7 +39,7 @@ uint16_t get_random() {
 }
 
 
-void good(const long delay) {
+void duckies::good(const long delay) {
   static bool done = false;
   if (!done) {
     DigiKeyboard.delay(5000);
@@ -43,5 +56,4 @@ void good(const long delay) {
   DigiKeyboard.delay(delay);
   return;
 }
-
 

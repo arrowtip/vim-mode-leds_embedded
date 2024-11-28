@@ -35,8 +35,11 @@ and go to the `/firmware` folder
 5. Insert the ATtiny85 into its socket on the PCB
 
 
+### Select Functionality
+Edit platformio.ini and change build_src_filter to select desired functionality
 
-### Install Led Code
+
+### Upload Code using Micronucleus
 1. Go to project root folder and run:
     ```shell
     pio run -t upload -e attiny85

@@ -1,5 +1,8 @@
 #pragma once
 
+namespace duckies {
 
+  void good(const long delay);
 
-void good(const long delay);
+}
+
